@@ -1,3 +1,8 @@
 .git/
 
 .env
+batch/bin/
+batch/include/
+batch/lib/
+batch/.Python
+batch/pyvenv.cfg
