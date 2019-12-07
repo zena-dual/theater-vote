@@ -1,0 +1,7 @@
+[mysqld]
+init-connect='SET NAMES utf8mb4'
+character-set-server=utf8mb4
+collation-server=utf8mb4_general_ci
+default-authentication-plugin=mysql_native_password
+default-time-zone='Asia/Tokyo'
+skip-character-set-client-handshake
