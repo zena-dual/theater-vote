@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: theater-vote.db
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - database:/var/lib/mysql
+      - ./db/config/settings.cnf:/etc/mysql/conf.d/settings.cnf
+      - ./db/migration/:/etc/migration/
+    networks:
+      network:
+        aliases:
+          - db
+
+volumes:
+  database:
+    name: theater-vote.db
+
+networks:
+  network:
+    name: theater-vote
