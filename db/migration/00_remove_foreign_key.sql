@@ -6,8 +6,8 @@ DELIMITER $$
 CREATE PROCEDURE DROP_ALL_FOREIGN_KEY()
 BEGIN
   DECLARE done INT DEFAULT FALSE;
-  DECLARE table_name VARCHAR(64);
-  DECLARE key_name VARCHAR(64);
+  DECLARE v_table_name VARCHAR(64);
+  DECLARE v_key_name VARCHAR(64);
   DECLARE foreign_key_cursor CURSOR FOR
     SELECT
       TABLE_NAME, CONSTRAINT_NAME
@@ -22,13 +22,13 @@ BEGIN
   OPEN foreign_key_cursor;
 
   read_loop: LOOP
-    FETCH foreign_key_cursor INTO table_name, key_name;
+    FETCH foreign_key_cursor INTO v_table_name, v_key_name;
 
     IF done THEN
       LEAVE read_loop;
     END IF;
 
-    SET @query = CONCAT('ALTER TABLE ', table_name, ' DROP FOREIGN KEY ', key_name, ';');
+    SET @query = CONCAT('ALTER TABLE ', v_table_name, ' DROP FOREIGN KEY ', v_key_name, ';');
     PREPARE stmt FROM @query;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
