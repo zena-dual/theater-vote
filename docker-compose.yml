@@ -9,9 +9,10 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - PYTHONPATH=/batch/lib/python3.7/site-packages
+      - PYTHONPATH=/batch/lib/python3.7/site-packages:/db/
     volumes:
       - ./batch/:/batch/
+      - ./db/lib/:/db/
     command: bash -c "pip install -r /batch/requirements.txt && python"
     tty: true
     networks:
