@@ -3,6 +3,11 @@
 **/__pycache__/
 
 .env
+app/bin/
+app/include/
+app/lib/
+app/.Python
+app/pyvenv.cfg
 batch/bin/
 batch/include/
 batch/lib/

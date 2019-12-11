@@ -1,6 +1,24 @@
 version: '3.5'
 
 services:
+  app:
+    image: python:3.7
+    container_name: theater-vote.app
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - PYTHONPATH=/app/lib/python3.7/site-packages:/db/
+    volumes:
+      - ./app/:/app/
+      - ./db/lib/:/db/
+    command: bash -c "pip install -r /app/requirements.txt && python"
+    tty: true
+    networks:
+      network:
+        aliases:
+          - app
   batch:
     image: python:3.7
     container_name: theater-vote.batch
