@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "風来坊",
+    "summaryTime": "2016-04-18T02:00:00+09:00",
+    "data": [
+      {
+        "idol_id": 1,
+        "idol_name": "天海春香",
+        "score": 100,
+        "rank": 1
+      },
+      {
+        "idol_id": 2,
+        "idol_name": "如月千早",
+        "score": 99,
+        "rank": 2
+      },
+      {
+        "idol_id": 3,
+        "idol_name": "星井美希",
+        "score": 98,
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "お嬢",
+    "summaryTime": "2016-04-18T01:00:00+09:00",
+    "data": [
+      {
+        "idol_id": 4,
+        "idol_name": "萩原雪歩",
+        "score": 100,
+        "rank": 1
+      },
+      {
+        "idol_id": 5,
+        "idol_name": "高槻やよい",
+        "score": 99,
+        "rank": 2
+      },
+      {
+        "idol_id": 6,
+        "idol_name": "菊地真",
+        "score": 98,
+        "rank": 3
+      }
+    ]
+  }
+]
